@@ -428,5 +428,6 @@ target_compile_definitions(opennurbs PUBLIC OPENNURBS_INPUT_LIBS_DIR=${opennurbs
 target_compile_definitions(opennurbs PRIVATE OPENNURBS_EXPORTS)
 
 if(WIN32)
+	target_link_options(opennurbs PRIVATE "/SECTION:.rdata,W")
 	target_link_libraries(opennurbs "shlwapi")
 endif()
